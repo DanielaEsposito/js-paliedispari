@@ -62,6 +62,7 @@ function askNumber(min, max, message= "Chiedi un numero"){
     while(isNaN(userNumber)|| userNumber < min && userNumber > max){
         userNumber= parseInt(prompt("il valore scritto non è valido..." + message));
     }
+    return userNumber;
 }
 
 
@@ -79,5 +80,5 @@ function askString ( whitelist=[], message = "Pari o dispari ?"){
     while(!whitelist.includes(urserChoice)){
         userChoice= prompt("la parola non è valida, scegli..." + message);
     }
-    
+    return userChoice;
 }
