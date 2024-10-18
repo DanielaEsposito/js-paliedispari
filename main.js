@@ -75,10 +75,26 @@ function askNumber(min, max, message= "Chiedi un numero"){
 function askString ( whitelist=[], message = "Pari o dispari ?"){
     // chiedo all'utente se sceglie pari o dispari 
     userChoice = prompt(message);
+    if (whitelist.length > 0){
     //console.log(userChoice);
     //FINCHE' la parola scelta dall'utente non è inclusa nella lista allora mando un messaggio
     while(!whitelist.includes(urserChoice)){
         userChoice= prompt("la parola non è valida, scegli..." + message);
     }
+    }     
     return userChoice;
+}
+//chiedo al computer di generare un numero casuale tra 1 e 5
+/**
+ * una funzione che chiede al computer di generare un numero da 1 a 5 
+ * 
+ *  @param {Number} //min
+ *  @param {Number} //max
+ * 
+ **/
+
+function randomNumbers (min, max) {
+    return Math.floor(Math.random()*(max - min + 1 ) )+ min;
+    
+    
 }
