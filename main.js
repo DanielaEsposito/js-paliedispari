@@ -58,10 +58,10 @@ isWordPalindrome();
 
 function askNumber(min, max, message= "Chiedi un numero"){
     //Chiedo un numero all'utente 
-    const userNumber = parseInt(prompt(message));
+    const userNumber = parseInt(prompt(message) );
     // FINCHE'il valore scritto dall'utente non è valido chiedo nuovamente un valore 
-    while(isNaN(userNumber)){
-        
+    while(isNaN(userNumber)|| userNumber < min && userNumber > max){
+        userNumber= parseInt(prompt("il valore scritto non è valido..." + message));
 
     }
 }
