@@ -16,9 +16,10 @@ function isWordPalindrome(message = "inserisci una parola") {
 let iswordpalindrome = false;
     const userWord = prompt(message);
     let userWordBreakDown = userWord.split("");
+    //inverto la parola scelta dallìutente 
     userWordBreakDown = userWordBreakDown.reverse();
     const userWordBreakDownReverse = userWordBreakDown.join("");
-    console.log(userWordBreakDownReverse);
+    //console.log(userWordBreakDownReverse);
     // SE la parola invertita è ugiale as userWord allora è palindroma    
     if (userWordBreakDownReverse === userWord){
      iswordpalindrome=true;
@@ -47,8 +48,6 @@ isWordPalindrome();
 
 /**
  * 
- * 
- * 
  * una funzione che chiede un numero compresto tra un valore minimo di 1 e un valore massimo di 5
  *  @param {Number}
  *  @param {Number}
@@ -62,6 +61,23 @@ function askNumber(min, max, message= "Chiedi un numero"){
     // FINCHE'il valore scritto dall'utente non è valido chiedo nuovamente un valore 
     while(isNaN(userNumber)|| userNumber < min && userNumber > max){
         userNumber= parseInt(prompt("il valore scritto non è valido..." + message));
-
     }
+}
+
+
+/**
+ * una funzione che chiede all'utente di scegliere tra pari e dispari 
+ * 
+ *  @param {"string"}
+ * 
+ **/
+function askString ( whitelist=[], message = "Pari o dispari ?"){
+    // chiedo all'utente se sceglie pari o dispari 
+    userChoice = prompt(message);
+    //console.log(userChoice);
+    //FINCHE' la parola scelta dall'utente non è inclusa nella lista allora mando un messaggio
+    while(!whitelist.includes(urserChoice)){
+        userChoice= prompt("la parola non è valida, scegli..." + message);
+    }
+    
 }
