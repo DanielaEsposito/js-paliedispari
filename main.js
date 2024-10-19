@@ -47,9 +47,9 @@ let iswordpalindromeControl = false;
 /**
  * 
  * una funzione che chiede un numero compresto tra un valore minimo specificato e un valore massimo specificato
- *  @param {Number}
- *  @param {Number}
- *  @param {"string"}
+ *  @param {Number} //min
+ *  @param {Number} //max
+ *  @param {"string"} //stringa 
  * 
  **/
 
@@ -67,7 +67,7 @@ function askNumber(min, max, message= "Chiedi un numero"){
 /**
  * una funzione che chiede all'utente di scegliere tra pari e dispari 
  * 
- *  @param {"string"}
+ *  @param {"string"} //stringa
  * 
  **/
 function askString ( whitelist=[], message = "scrivi una stringa"){
@@ -97,7 +97,7 @@ function randomNumbers (min, max) {
 /**
  * una funzione che mi dice se un numero è pari 
  * 
- *  @param {Number} 
+ *  @param {Number} //num
  * 
  **/
 function isNumberEven (num){
@@ -108,8 +108,29 @@ function isNumberEven (num){
         return false;
     }
 }
+// controllo il vincitore della partita tramite una funzione
+/**
+ * una funzione che decreta il vincitore della partita a pari e dispari
+ * 
+ *  @param {Number} //userNumber
+ *  @param {Number} //pcNumber
+ *  @param {Number} //userChoice
+ **/
 
+function winner (userNumber , pcNumber , userChoice){
+    // console.log(userNumber);
+    // console.log(pcNumber);
+    //console.log(userChoice);
+    
+    const sum = userNumber + pcNumber;
+    const evenWinCondition = userChoice ==="pari" && isNumberEven(sum);
+    const oddWinCondition = userChoice === "dispari" && !isNumberEven(sum);
 
+    return evenWinCondition || oddWinCondition;
 
-const userNumber = askNumber (1,5, "Scegli un numero tra 1 e 5");
+}
+
 const userChoice = askString (["pari", "dispari"], "Scegli pari o dispari ")
+const userNumber = askNumber (1,5, "Scegli un numero tra 1 e 5");
+const pcNumber = randomNumbers (1,5);
+const winner = winner(userNumber,pcNumber, userChoice,);
