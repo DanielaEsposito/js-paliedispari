@@ -100,6 +100,14 @@ function randomNumbers (min, max) {
  *  @param {Number} 
  * 
  **/
+function isNumberEven (num){
+    if (num % 2 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 
 
