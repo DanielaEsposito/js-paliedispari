@@ -13,7 +13,7 @@
 
 function isWordPalindrome(message = "inserisci una parola") {
 // chiedo all'utente di inserire una parola 
-let iswordpalindromeControl = false;
+let isWordPalindromeControl = false;
     const userWord = prompt(message);
     let userWordBreakDown = userWord.split("");
     //inverto la parola scelta dallìutente 
@@ -22,7 +22,7 @@ let iswordpalindromeControl = false;
     //console.log(userWordBreakDownReverse);
     // SE la parola invertita è ugiale as userWord allora è palindroma    
     if (userWordBreakDownReverse === userWord){
-     iswordpalindromeControl=true;
+     isWordPalindromeControl=true;
      alert("la parola è palindroma")
     }
     // ALTRIEMNTI non lo è
