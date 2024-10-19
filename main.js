@@ -13,7 +13,7 @@
 
 function isWordPalindrome(message = "inserisci una parola") {
 // chiedo all'utente di inserire una parola 
-let iswordpalindrome = false;
+let iswordpalindromeControl = false;
     const userWord = prompt(message);
     let userWordBreakDown = userWord.split("");
     //inverto la parola scelta dallìutente 
@@ -22,7 +22,7 @@ let iswordpalindrome = false;
     //console.log(userWordBreakDownReverse);
     // SE la parola invertita è ugiale as userWord allora è palindroma    
     if (userWordBreakDownReverse === userWord){
-     iswordpalindrome=true;
+     iswordpalindromeControl=true;
      alert("la parola è palindroma")
     }
     // ALTRIEMNTI non lo è
@@ -30,12 +30,10 @@ let iswordpalindrome = false;
         alert("la parola Non è palindroma")
     }
     //OUTPUT
-  return isWordPalindrome; 
+  return isPalindromeControl; 
 
 }
 
-
-isWordPalindrome();
 
 
 //*Pari e Dispari
@@ -48,7 +46,7 @@ isWordPalindrome();
 
 /**
  * 
- * una funzione che chiede un numero compresto tra un valore minimo di 1 e un valore massimo di 5
+ * una funzione che chiede un numero compresto tra un valore minimo specificato e un valore massimo specificato
  *  @param {Number}
  *  @param {Number}
  *  @param {"string"}
@@ -59,7 +57,7 @@ function askNumber(min, max, message= "Chiedi un numero"){
     //Chiedo un numero all'utente 
     const userNumber = parseInt(prompt(message) );
     // FINCHE'il valore scritto dall'utente non è valido chiedo nuovamente un valore 
-    while(isNaN(userNumber)|| userNumber < min && userNumber > max){
+    while(isNaN(userNumber)|| userNumber < min || userNumber > max){
         userNumber= parseInt(prompt("il valore scritto non è valido..." + message));
     }
     return userNumber;
@@ -72,21 +70,21 @@ function askNumber(min, max, message= "Chiedi un numero"){
  *  @param {"string"}
  * 
  **/
-function askString ( whitelist=[], message = "Pari o dispari ?"){
+function askString ( whitelist=[], message = "scrivi una stringa"){
     // chiedo all'utente se sceglie pari o dispari 
-    userChoice = prompt(message);
+    const userChoice = prompt(message);
     if (whitelist.length > 0){
     //console.log(userChoice);
     //FINCHE' la parola scelta dall'utente non è inclusa nella lista allora mando un messaggio
-    while(!whitelist.includes(urserChoice)){
-        userChoice= prompt("la parola non è valida, scegli..." + message);
+    while(!whitelist.includes(userChoice)){
+        userChoice= prompt("la parola non è valida..." + message);
     }
     }     
     return userChoice;
 }
 //chiedo al computer di generare un numero casuale tra 1 e 5
 /**
- * una funzione che chiede al computer di generare un numero da 1 a 5 
+ * una funzione che genera un numero random tra un valore minumo specificato ed un valore massimo specificato 
  * 
  *  @param {Number} //min
  *  @param {Number} //max
@@ -95,6 +93,15 @@ function askString ( whitelist=[], message = "Pari o dispari ?"){
 
 function randomNumbers (min, max) {
     return Math.floor(Math.random()*(max - min + 1 ) )+ min;
-    
-    
 }
+/**
+ * una funzione che mi dice se un numero è pari 
+ * 
+ *  @param {Number} 
+ * 
+ **/
+
+
+
+const userNumber = askNumber (1,5, "Scegli un numero tra 1 e 5");
+const userChoice = askString (["pari", "dispari"], "Scegli pari o dispari ")
