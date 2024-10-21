@@ -130,7 +130,7 @@ function winner (userNumber , pcNumber , userChoice){
 
 }
 
-const userChoice = askString (["pari", "dispari"], "Scegli pari o dispari ")
+const userChoice = askString (["pari", "dispari"], "Scegli pari o dispari ");
 const userNumber = askNumber (1,5, "Scegli un numero tra 1 e 5");
 const pcNumber = randomNumbers (1,5);
-const winner = winner(userNumber,pcNumber, userChoice,);
+const winner = winner(userNumber,pcNumber, userChoice);
